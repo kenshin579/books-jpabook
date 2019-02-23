@@ -1,45 +1,48 @@
 package jpabook.start;
 
-import javax.persistence.*;  //**
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * User: HolyEyE
  * Date: 13. 5. 24. Time: 오후 7:43
  */
 @Entity
-@Table(name="MEMBER")
+@Table(name = "MEMBER")
 public class Member {
 
-    @Id
-    @Column(name = "ID")
-    private String id;
+	@Id
+	@Column(name = "ID")
+	private String id;
 
-    @Column(name = "NAME")
-    private String username;
+	@Column(name = "NAME")
+	private String username;
 
-    private Integer age;
+	private Integer age;
 
-    public String getId() {
-        return id;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public Integer getAge() {
-        return age;
-    }
+	public Integer getAge() {
+		return age;
+	}
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 }

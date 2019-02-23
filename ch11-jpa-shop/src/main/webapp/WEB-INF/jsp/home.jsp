@@ -9,7 +9,7 @@
 
 <div class="container">
 
-    <jsp:include page="fragments/bodyHeader.jsp" />
+    <jsp:include page="fragments/bodyHeader.jsp"/>
 
     <div class="jumbotron">
         <h1>HELLO SHOP</h1>
@@ -30,7 +30,7 @@
         </p>
     </div>
 
-    <jsp:include page="fragments/footer.jsp" />
+    <jsp:include page="fragments/footer.jsp"/>
 
 </div> <!-- /container -->
 

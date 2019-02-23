@@ -23,43 +23,43 @@ import java.util.List;
 @Transactional
 public class OrderRepositoryTest {
 
-    @Autowired MemberService memberService;
-    @Autowired ItemService itemService;
-    @Autowired OrderService orderService;
-    @Autowired OrderRepository orderRepository;
+	@Autowired MemberService memberService;
+	@Autowired ItemService itemService;
+	@Autowired OrderService orderService;
+	@Autowired OrderRepository orderRepository;
 
-    @Test
-    public void test() throws Exception {
+	@Test
+	public void test() throws Exception {
 
-        //Given
-        Member member = createMember("hello");
-        Book book = createItem("시골 Book", 10);
-        orderService.order(member.getId(), book.getId(), 1);
+		//Given
+		Member member = createMember("hello");
+		Book book = createItem("시골 Book", 10);
+		orderService.order(member.getId(), book.getId(), 1);
 
-        //When
-        OrderSearch orderSearch = new OrderSearch();
-        orderSearch.setMemberName("hello");
-        orderSearch.setOrderStatus(OrderStatus.ORDER);
+		//When
+		OrderSearch orderSearch = new OrderSearch();
+		orderSearch.setMemberName("hello");
+		orderSearch.setOrderStatus(OrderStatus.ORDER);
 
-        List<Order> search = orderRepository.search(orderSearch);
+		List<Order> search = orderRepository.search(orderSearch);
 
-        //Then
-        Assert.assertEquals(1, search.size());
-    }
+		//Then
+		Assert.assertEquals(1, search.size());
+	}
 
-    private Member createMember(String name) {
-        Member member = new Member();
-        member.setName(name);
-        memberService.join(member);
-        return member;
-    }
+	private Member createMember(String name) {
+		Member member = new Member();
+		member.setName(name);
+		memberService.join(member);
+		return member;
+	}
 
-    private Book createItem(String name, int stockQuantity) {
-        Book book = new Book();
-        book.setName(name);
-        book.setStockQuantity(stockQuantity);
-        itemService.saveItem(book);
-        return book;
-    }
+	private Book createItem(String name, int stockQuantity) {
+		Book book = new Book();
+		book.setName(name);
+		book.setStockQuantity(stockQuantity);
+		itemService.saveItem(book);
+		return book;
+	}
 
 }

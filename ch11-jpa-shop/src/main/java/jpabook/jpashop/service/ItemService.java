@@ -16,18 +16,18 @@ import java.util.List;
 @Transactional
 public class ItemService {
 
-    @Autowired
-    ItemRepository itemRepository;
+	@Autowired
+	ItemRepository itemRepository;
 
-    public void saveItem(Item item) {
-        itemRepository.save(item);
-    }
+	public void saveItem(Item item) {
+		itemRepository.save(item);
+	}
 
-    public List<Item> findItems() {
-        return itemRepository.findAll();
-    }
+	public List<Item> findItems() {
+		return itemRepository.findAll();
+	}
 
-    public Item findOne(Long itemId) {
-        return itemRepository.findOne(itemId);
-    }
+	public Item findOne(Long itemId) {
+		return itemRepository.findOne(itemId);
+	}
 }

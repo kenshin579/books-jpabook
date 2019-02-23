@@ -1,6 +1,10 @@
 package jpabook.model.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,66 +15,66 @@ import java.util.List;
 @Entity
 public class Member extends BaseEntity {
 
-    @Id @GeneratedValue
-    @Column(name = "MEMBER_ID")
-    private Long id;
+	@Id @GeneratedValue
+	@Column(name = "MEMBER_ID")
+	private Long id;
 
-    private String name;
+	private String name;
 
-    private String city;
-    private String street;
-    private String zipcode;
+	private String city;
+	private String street;
+	private String zipcode;
 
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<Order>();
+	@OneToMany(mappedBy = "member")
+	private List<Order> orders = new ArrayList<Order>();
 
-    //Getter, Setter
+	//Getter, Setter
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getCity() {
-        return city;
-    }
+	public String getCity() {
+		return city;
+	}
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-    public String getStreet() {
-        return street;
-    }
+	public String getStreet() {
+		return street;
+	}
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
+	public void setStreet(String street) {
+		this.street = street;
+	}
 
-    public String getZipcode() {
-        return zipcode;
-    }
+	public String getZipcode() {
+		return zipcode;
+	}
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
-    }
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
 
-    public List<Order> getOrders() {
-        return orders;
-    }
+	public List<Order> getOrders() {
+		return orders;
+	}
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
 }

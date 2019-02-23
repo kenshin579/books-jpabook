@@ -8,7 +8,7 @@
 
 <div class="container">
 
-    <jsp:include page="../fragments/bodyHeader.jsp" />
+    <jsp:include page="../fragments/bodyHeader.jsp"/>
 
     <form role="form" action="/order" method="post">
 
@@ -40,7 +40,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
     <br/>
-    <jsp:include page="../fragments/footer.jsp" />
+    <jsp:include page="../fragments/footer.jsp"/>
 
 </div> <!-- /container -->
 

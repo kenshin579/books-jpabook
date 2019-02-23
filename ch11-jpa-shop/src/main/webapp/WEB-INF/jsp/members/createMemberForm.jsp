@@ -6,7 +6,7 @@
 
 <div class="container">
 
-    <jsp:include page="../fragments/bodyHeader.jsp" />
+    <jsp:include page="../fragments/bodyHeader.jsp"/>
 
     <form role="form" action="/members/new" method="post">
         <div class="form-group">
@@ -28,7 +28,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
     <br/>
-    <jsp:include page="../fragments/footer.jsp" />
+    <jsp:include page="../fragments/footer.jsp"/>
 </div> <!-- /container -->
 
 </body>

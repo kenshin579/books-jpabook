@@ -6,7 +6,7 @@
 <body>
 
 <div class="container">
-    <jsp:include page="../fragments/bodyHeader.jsp" />
+    <jsp:include page="../fragments/bodyHeader.jsp"/>
 
     <div>
         <table class="table table-striped">
@@ -35,7 +35,7 @@
         </table>
     </div>
 
-    <jsp:include page="../fragments/footer.jsp" />
+    <jsp:include page="../fragments/footer.jsp"/>
 
 </div> <!-- /container -->
 

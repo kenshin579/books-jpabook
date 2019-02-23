@@ -7,7 +7,7 @@
 
 <div class="container">
 
-    <jsp:include page="../fragments/bodyHeader.jsp" />
+    <jsp:include page="../fragments/bodyHeader.jsp"/>
 
 
     <div>
@@ -19,8 +19,12 @@
                 <div class="form-group">
                     <select class="form-control" name="orderStatus">
                         <option value="">주문상태</option>
-                        <option value="ORDER" <c:if test="${orderSearch.orderStatus eq 'ORDER'}">selected</c:if> >주문</option>
-                        <option value="CANCEL" <c:if test="${orderSearch.orderStatus eq 'CANCEL'}">selected</c:if> >취소</option>
+                        <option value="ORDER"
+                                <c:if test="${orderSearch.orderStatus eq 'ORDER'}">selected</c:if> >주문
+                        </option>
+                        <option value="CANCEL"
+                                <c:if test="${orderSearch.orderStatus eq 'CANCEL'}">selected</c:if> >취소
+                        </option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-default">검색</button>
@@ -52,7 +56,7 @@
                     <td>${item.orderDate}</td>
                     <td>
                         <c:if test="${item.status == 'ORDER'}">
-                        <a href="/orders/${item.id}/cancel" class="btn btn-danger">주문취소</a>
+                            <a href="/orders/${item.id}/cancel" class="btn btn-danger">주문취소</a>
                         </c:if>
                     </td>
                 </tr>
@@ -61,7 +65,7 @@
         </table>
     </div>
 
-    <jsp:include page="../fragments/footer.jsp" />
+    <jsp:include page="../fragments/footer.jsp"/>
 
 </div> <!-- /container -->
 

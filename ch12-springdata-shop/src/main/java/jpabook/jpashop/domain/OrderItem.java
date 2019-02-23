@@ -11,92 +11,98 @@ import javax.persistence.*;
 @Table(name = "ORDER_ITEM")
 public class OrderItem {
 
-    @Id @GeneratedValue
-    @Column(name = "ORDER_ITEM_ID")
-    private Long id;
+	@Id @GeneratedValue
+	@Column(name = "ORDER_ITEM_ID")
+	private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ITEM_ID")
-    private Item item;      //주문 상품
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ITEM_ID")
+	private Item item;      //주문 상품
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ORDER_ID")
-    private Order order;    //주문
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ORDER_ID")
+	private Order order;    //주문
 
-    private int orderPrice; //주문 가격
-    private int count;      //주문 수량
+	private int orderPrice; //주문 가격
+	private int count;      //주문 수량
 
-    //==생성 메서드==//
-    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
+	//==생성 메서드==//
+	public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
 
-        OrderItem orderItem = new OrderItem();
-        orderItem.setItem(item);
-        orderItem.setOrderPrice(orderPrice);
-        orderItem.setCount(count);
+		OrderItem orderItem = new OrderItem();
+		orderItem.setItem(item);
+		orderItem.setOrderPrice(orderPrice);
+		orderItem.setCount(count);
 
-        item.removeStock(count);
-        return orderItem;
-    }
+		item.removeStock(count);
+		return orderItem;
+	}
 
-    //==비즈니스 로직==//
-    /** 주문 취소 */
-    public void cancel() {
-        getItem().addStock(count);
-    }
+	//==비즈니스 로직==//
 
-    //==조회 로직==//
-    /** 주문상품 전체 가격 조회 */
-    public int getTotalPrice() {
-        return getOrderPrice() * getCount();
-    }
+	/**
+	 * 주문 취소
+	 */
+	public void cancel() {
+		getItem().addStock(count);
+	}
 
-    //==Getter, Setter==//
-    public Long getId() {
-        return id;
-    }
+	//==조회 로직==//
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	/**
+	 * 주문상품 전체 가격 조회
+	 */
+	public int getTotalPrice() {
+		return getOrderPrice() * getCount();
+	}
 
-    public Item getItem() {
-        return item;
-    }
+	//==Getter, Setter==//
+	public Long getId() {
+		return id;
+	}
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Order getOrder() {
-        return order;
-    }
+	public Item getItem() {
+		return item;
+	}
 
-    public void setOrder(Order order) {
-        this.order = order;
-    }
+	public void setItem(Item item) {
+		this.item = item;
+	}
 
-    public int getOrderPrice() {
-        return orderPrice;
-    }
+	public Order getOrder() {
+		return order;
+	}
 
-    public void setOrderPrice(int buyPrice) {
-        this.orderPrice = buyPrice;
-    }
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 
-    public int getCount() {
-        return count;
-    }
+	public int getOrderPrice() {
+		return orderPrice;
+	}
 
-    public void setCount(int count) {
-        this.count = count;
-    }
+	public void setOrderPrice(int buyPrice) {
+		this.orderPrice = buyPrice;
+	}
 
-    @Override
-    public String toString() {
-        return "OrderItem{" +
-                "id=" + id +
-                ", buyPrice=" + orderPrice +
-                ", count=" + count +
-                '}';
-    }
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderItem{" +
+				"id=" + id +
+				", buyPrice=" + orderPrice +
+				", count=" + count +
+				'}';
+	}
 }
