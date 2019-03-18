@@ -1,5 +1,9 @@
 package jpabook.model;
 
+import jpabook.model.entity.Delivery;
+import jpabook.model.entity.Order;
+import jpabook.model.entity.OrderItem;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -22,6 +26,8 @@ public class Main {
 
 			tx.begin(); //트랜잭션 시작
 			//TODO 비즈니스 로직
+
+
 			tx.commit();//트랜잭션 커밋
 
 		} catch (Exception e) {
