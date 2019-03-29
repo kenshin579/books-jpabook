@@ -10,7 +10,7 @@ public class EMF {
 			new ThreadLocal<EntityManager>();
 
 	public static void init() {
-		emf = Persistence.createEntityManagerFactory("jpastart");
+		emf = Persistence.createEntityManagerFactory("jpabook");
 	}
 
 	public static EntityManager createEntityManager() {
