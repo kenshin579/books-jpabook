@@ -18,7 +18,7 @@ import java.util.Date;
  * Date: 13. 5. 24. Time: 오후 7:43
  */
 @Entity
-@Table(name = "MEMBER", uniqueConstraints = { @UniqueConstraint( //추가 //**
+@Table(name = "member", uniqueConstraints = { @UniqueConstraint( //추가 //**
 		name = "NAME_AGE_UNIQUE",
 		columnNames = { "NAME", "AGE" }) })
 public class Member {
