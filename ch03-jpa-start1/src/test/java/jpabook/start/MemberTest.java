@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import javax.persistence.EntityManager;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -38,10 +37,35 @@ public class MemberTest extends JpaTestBase {
 
 			//수정
 			memberA.setUsername("hi");
-//			memberA.setAge(20);
+			//			memberA.setAge(20);
 			assertThat(memberA.getUsername()).isEqualTo("hi");
 
 			//em.update(member); //이런 코드는 불필요하다
+
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			em.getTransaction().rollback();
+		} finally {
+			em.close();
+		}
+	}
+
+	@Test
+	public void 예제_3_8_detach_테스트_코드() {
+		try {
+			em.getTransaction().begin();
+
+			Member member = new Member();
+			member.setId("memberB");
+			member.setUsername("frank");
+			member.setAge(20);
+
+			//영속 상탱
+			em.persist(member);
+
+			//준영속 상태
+			em.detach(member);
 
 			em.getTransaction().commit();
 		} catch (Exception e) {
