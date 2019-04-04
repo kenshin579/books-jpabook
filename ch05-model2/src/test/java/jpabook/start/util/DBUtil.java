@@ -16,6 +16,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * todo : JDBC connection을 추가해서 테이블을 삭제하는 코드를 넣은게 좋을 듯함
+ *
+ * https://programmingsummaries.tistory.com/70
+ */
 public class DBUtil {
 	static {
 		try {
