@@ -185,6 +185,11 @@ public class TestMemberOneToManyTest extends JpaTestBase {
 		}
 	}
 
+	/**
+	 * todo: db을 다시 삭제하던지...
+	 * https://www.logicbig.com/tutorials/spring-framework/spring-data-access-with-jdbc/jdbc-test-utils.html
+	 *
+	 */
 	@Test
 	public void 예제_5_18_양방향_리팩토링_전체코드_편의_메서드() {
 		try {
