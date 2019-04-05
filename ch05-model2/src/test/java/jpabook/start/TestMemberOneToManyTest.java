@@ -187,6 +187,7 @@ public class TestMemberOneToManyTest extends JpaTestBase {
 
 	/**
 	 * todo: db을 다시 삭제하던지...
+	 * https://www.mkyong.com/spring/spring-embedded-database-examples/
 	 * https://www.logicbig.com/tutorials/spring-framework/spring-data-access-with-jdbc/jdbc-test-utils.html
 	 *
 	 */
