@@ -38,6 +38,10 @@ public class TestMember {
 		if (this.team != null) {
 			this.team.getMembers().remove(this);
 		}
-		team.getMembers().add(this); //편의 메서드 추가
+
+		//무한루프에 빠지지 않도록 체크
+		if (!team.getMembers().contains(this)) {
+			team.getMembers().add(this); //편의 메서드 추가
+		}
 	}
 }

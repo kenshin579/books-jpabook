@@ -28,6 +28,13 @@ public class TestTeam {
 	@OneToMany(mappedBy = "team") //MappedBy 속성의 값은 연관관계의 주인인 Member.team
 	private List<TestMember> members = new ArrayList<>();
 
+	public void addMember(TestMember member) {
+		this.members.add(member);
+		if (member.getTeam() != this) { //무한루프에 빠지지 않도록 체크
+			member.setTeam(this);
+		}
+	}
+
 	public TestTeam(String id, String name) {
 		this.id = id;
 		this.name = name;
