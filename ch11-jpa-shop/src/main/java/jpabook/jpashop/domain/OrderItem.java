@@ -2,7 +2,14 @@ package jpabook.jpashop.domain;
 
 import jpabook.jpashop.domain.item.Item;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * Created by holyeye on 2014. 3. 11..

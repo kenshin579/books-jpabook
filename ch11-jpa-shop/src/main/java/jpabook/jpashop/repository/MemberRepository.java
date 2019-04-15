@@ -14,6 +14,7 @@ import java.util.List;
 @Repository
 public class MemberRepository {
 
+	//컨테이너가 관리하는 엔티티 메니저를 주입해준다
 	@PersistenceContext
 	EntityManager em;
 
@@ -25,6 +26,7 @@ public class MemberRepository {
 		return em.find(Member.class, id);
 	}
 
+	//JPQL을 사용해서 이름으로 회원 엔티티를 조회함
 	public List<Member> findAll() {
 		return em.createQuery("select m from Member m", Member.class)
 				.getResultList();

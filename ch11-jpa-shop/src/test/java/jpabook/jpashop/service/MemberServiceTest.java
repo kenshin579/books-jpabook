@@ -9,7 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:appConfig.xml")
@@ -21,7 +22,6 @@ public class MemberServiceTest {
 
 	@Test
 	public void 회원가입() throws Exception {
-
 		//Given
 		Member member = new Member();
 		member.setName("kim");
@@ -50,5 +50,4 @@ public class MemberServiceTest {
 		//Then
 		fail("예외가 발생해야 한다.");
 	}
-
 }
