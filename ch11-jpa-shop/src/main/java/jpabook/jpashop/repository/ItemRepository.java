@@ -18,10 +18,18 @@ public class ItemRepository {
 	@PersistenceContext
 	EntityManager em;
 
+	/**
+	 * 저장
+	 * - 신규 데이터
+	 * - 변경된 데이터
+	 *
+	 * @param item
+	 */
 	public void save(Item item) {
 		if (item.getId() == null) {
 			em.persist(item);
 		} else {
+			//업데이트로 들어온 엔티티는 준영속성이라서 merge로 병함시켜 저장함
 			em.merge(item);
 		}
 	}

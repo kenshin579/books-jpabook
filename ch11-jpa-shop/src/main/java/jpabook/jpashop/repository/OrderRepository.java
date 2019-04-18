@@ -36,6 +36,12 @@ public class OrderRepository {
 		return em.find(Order.class, id);
 	}
 
+	/**
+	 * CriteriaBuilder로 동적으로 SQL문을 생성해서 주문 엔티티를 조회함
+	 *
+	 * @param orderSearch
+	 * @return
+	 */
 	public List<Order> findAll(OrderSearch orderSearch) {
 
 		CriteriaBuilder cb = em.getCriteriaBuilder();

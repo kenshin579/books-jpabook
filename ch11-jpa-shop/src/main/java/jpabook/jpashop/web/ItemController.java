@@ -35,7 +35,7 @@ public class ItemController {
 	}
 
 	/**
-	 * 상품 수정 폼
+	 * 상품 수정 폼 - 수정버튼 클릭후 정보를 가져와 뷰에 데이터를 채워줌
 	 */
 	@RequestMapping(value = "/items/{itemId}/edit", method = RequestMethod.GET)
 	public String updateItemForm(@PathVariable("itemId") Long itemId, Model model) {
