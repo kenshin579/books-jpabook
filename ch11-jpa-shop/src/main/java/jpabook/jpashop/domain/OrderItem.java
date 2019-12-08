@@ -1,6 +1,9 @@
 package jpabook.jpashop.domain;
 
 import jpabook.jpashop.domain.item.Item;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +17,9 @@ import javax.persistence.Table;
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+@Getter
+@Setter
+@ToString(exclude = {"item", "order"})
 @Entity
 @Table(name = "ORDER_ITEM")
 public class OrderItem {
@@ -63,53 +69,12 @@ public class OrderItem {
 		return getOrderPrice() * getCount();
 	}
 
-	//==Getter, Setter==//
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Item getItem() {
-		return item;
-	}
-
-	public void setItem(Item item) {
-		this.item = item;
-	}
-
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order = order;
-	}
-
-	public int getOrderPrice() {
-		return orderPrice;
-	}
-
-	public void setOrderPrice(int buyPrice) {
-		this.orderPrice = buyPrice;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
-	}
-
-	@Override
-	public String toString() {
-		return "OrderItem{" +
-				"id=" + id +
-				", buyPrice=" + orderPrice +
-				", count=" + count +
-				'}';
-	}
+//	@Override
+//	public String toString() {
+//		return "OrderItem{" +
+//				"id=" + id +
+//				", buyPrice=" + orderPrice +
+//				", count=" + count +
+//				'}';
+//	}
 }

@@ -6,7 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.ArrayList;
@@ -18,14 +20,15 @@ import java.util.List;
 @Entity
 @Table(name = "TEST_TEAM")
 public class TestTeam {
-	@Id
+	@Id @GeneratedValue
 	@Column(name = "TEAM_ID")
 	private String id;
 
 	private String name;
 
 	//팀 -> 회원 방향
-	@OneToMany(mappedBy = "team") //MappedBy 속성의 값은 연관관계의 주인인 Member.team
+	@OneToMany
+	@JoinColumn(name = "TEAM_ID") //MEMBER 테이블의 TEAM_ID (FK)
 	private List<TestMember> members = new ArrayList<>();
 
 	public void addMember(TestMember member) {

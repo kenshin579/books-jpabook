@@ -1,10 +1,17 @@
 package jpabook.model.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "ORDER_ITEM")
 public class OrderItem {
@@ -23,47 +30,6 @@ public class OrderItem {
 
     private int orderPrice; //주문 가격
     private int count;      //주문 수량
-
-    //Getter, Setter
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public int getOrderPrice() {
-        return orderPrice;
-    }
-
-    public void setOrderPrice(int orderPrice) {
-        this.orderPrice = orderPrice;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
 
     @Override
     public String toString() {

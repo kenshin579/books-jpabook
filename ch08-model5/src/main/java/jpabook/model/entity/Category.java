@@ -1,6 +1,8 @@
 package jpabook.model.entity;
 
 import jpabook.model.entity.item.Item;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +19,8 @@ import java.util.List;
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+@Getter
+@Setter
 @Entity
 public class Category {
 
@@ -47,46 +51,6 @@ public class Category {
 
 	public void addItem(Item item) {
 		items.add(item);
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public List<Item> getItems() {
-		return items;
-	}
-
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
-
-	public Category getParent() {
-		return parent;
-	}
-
-	public void setParent(Category parent) {
-		this.parent = parent;
-	}
-
-	public List<Category> getChild() {
-		return child;
-	}
-
-	public void setChild(List<Category> child) {
-		this.child = child;
 	}
 
 	@Override

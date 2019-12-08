@@ -19,7 +19,7 @@
 		<hibernate.version>4.3.10.Final</hibernate.version>
 		<!-- 데이터베이스 버전 -->
 		<h2db.version>1.4.187</h2db.version>
-
+		<spring.version>4.3.10.RELEASE</spring.version>
 	</properties>
 
 
@@ -36,7 +36,21 @@
 			<artifactId>h2</artifactId>
 			<version>${h2db.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
